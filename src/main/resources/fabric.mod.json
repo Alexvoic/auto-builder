@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "autobuilder",
+  "version": "1.0.0",
+  "name": "Auto Builder",
+  "description": "Press Right Shift for a GUI with an Auto Builder that builds your Litematica schematic.",
+  "environment": "client",
+  "entrypoints": { "client": ["dev.autobuilder.AutoBuilderMod"] },
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "1.21.11",
+    "java": ">=21",
+    "fabric-api": "*",
+    "litematica": "*",
+    "malilib": "*"
+  }
+}

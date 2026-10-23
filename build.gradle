@@ -1,0 +1,23 @@
+plugins {
+    id 'fabric-loom' version '1.14-SNAPSHOT'
+}
+
+version = '1.0.0'
+group = 'dev.autobuilder'
+base { archivesName = 'autobuilder-1.21.11' }
+
+repositories { mavenCentral() }
+
+dependencies {
+    minecraft "com.mojang:minecraft:1.21.11"
+    mappings "net.fabricmc:yarn:1.21.11+build.4:v2"
+    modImplementation "net.fabricmc:fabric-loader:0.18.1"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.141.1+1.21.11"
+
+    // Put your Litematica (0.26.x) + MaLiLib (0.27.x) jars for 1.21.11 in /libs and rename them:
+    modCompileOnly files("libs/litematica.jar")
+    modCompileOnly files("libs/malilib.jar")
+}
+
+tasks.withType(JavaCompile).configureEach { options.release = 21 }
+java { sourceCompatibility = JavaVersion.VERSION_21; targetCompatibility = JavaVersion.VERSION_21 }
